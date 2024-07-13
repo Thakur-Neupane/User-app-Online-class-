@@ -15,10 +15,18 @@ const PORT = 8001;
 app.use(express.static(__dirname + "/public"));
 
 // OR we can also do the code like this :-
-path.join(__dirname + "public");
+
+// path.join(__dirname + "public");
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/src/html/index.html");
+});
+
+app.get("/get-user", (req, res) => {
+  res.json({
+    fName: "Thakur",
+    lName: "Neupane",
+  });
 });
 
 app.listen(PORT, (error) => {
