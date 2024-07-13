@@ -12,9 +12,15 @@ const PORT = 8001;
 //   res.send("<h1>Hello Server Dev</h1>;");
 // });
 
+app.use(express.static(__dirname + "/public"));
+
+// OR we can also do the code like this :-
+path.join(__dirname + "public");
+
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/src/html/index.html");
 });
+
 app.listen(PORT, (error) => {
   error
     ? console.log(error)

@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  font-size: 2 rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1 rem;
+}
+a {
+  color: white;
+}
