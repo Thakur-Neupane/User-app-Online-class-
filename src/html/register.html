@@ -12,23 +12,7 @@
 
     <title>My User Diary</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      .wrapper {
-        font-size: 2 rem;
-      }
-      nav {
-        display: flex;
-        justify-content: space-between;
-        padding: 1 rem;
-      }
-      a {
-        color: white;
-      }
-    </style> -->
+   
   </head>
   <body>
     <div class="wrapper">
@@ -42,37 +26,51 @@
         </div>
       </nav>
       <hr />
-      <h1>Register to our awesome part of our community!!</h1>
+      <h1 class="text-center">Register to our awesome part of our community!!</h1>
       <hr />
 
-      <div class="container">
-        <div class="alert alert-primary">
-            Create account to stay connected with us!!
-        </div>
      
 
-      </div>
+      <div class="container mt-5">
+      <form
+      method="post"
+      action="/register"
+      enctype="application/x-www-form-urlencoded" 
+      class="shadow-lg p-4 rounded">
+        <h2>Register Now!!!</h2>
+        <hr>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Name</label
+          >
+          <input
+            type="text"
+            name=" name"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+          />
+         
+        </div>
 
-      <!-- <div class="container mt-5"></div>
-      <form class="shadow-lg p-2">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label"
             >Email address</label
           >
           <input
             type="email"
+            name="email"
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
           />
-          <div id="emailHelp" class="form-text">
-            We'll never share your email with anyone else.
-          </div>
+         
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
           <input
             type="password"
+            name="password"
             class="form-control"
             id="exampleInputPassword1"
           />
@@ -82,9 +80,11 @@
           <label class="form-check-label" for="exampleCheck1"
             >Check me out</label
           >
-        </div>
+        </div >
+        <div class= "d-grid">
         <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
       </form>
-    </div> -->
+    </div>
   </body>
 </html>

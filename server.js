@@ -6,6 +6,7 @@ const __dirname = path.resolve();
 console.log(__dirname, "______");
 
 const PORT = 8001;
+app.use(express.urlencoded({ extended: true }));
 
 // app.get("/", (req, res, next) => {
 //   console.log("I have got the request");
@@ -24,6 +25,12 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/src/html/index.html");
 });
 
+app.post("/register", (req, res) => {
+  console.log("request received for login!!");
+  console.log(req.body);
+  res.sendFile(__dirname + "/src/html/register.html");
+});
+
 // app.get("/get-user", (req, res) => {
 //   res.json({
 //     fName: "Thakur",
@@ -34,6 +41,7 @@ app.get("/", (req, res) => {
 // User registration controllers
 app.get("/register", (req, res) => {
   console.log("request received!!");
+  console.log(req.query);
   res.sendFile(__dirname + "/src/html/register.html");
 });
 
