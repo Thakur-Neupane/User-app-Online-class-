@@ -1,11 +1,13 @@
 import express from "express";
 import path from "path";
+import fs from "fs";
 const app = express();
 
 const __dirname = path.resolve();
 console.log(__dirname, "______");
 
 const PORT = 8001;
+const fileName = "userList.csv";
 app.use(express.urlencoded({ extended: true }));
 
 // app.get("/", (req, res, next) => {
@@ -26,8 +28,18 @@ app.get("/", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  console.log("request received for login!!");
+  const { name, email, password } = req.body;
+  const str = `${name}, ${email}, ${password}\n`;
+  fs.appendFile(fileName, str, (error) => {
+    error ? res.send(error.message) : res.redirect("/");
+    // : res.send(
+    //     `<h1 class="alert alert-success">User has been created, You may login now!!!</h1>`
+    //   );
+  });
   console.log(req.body);
+
+  // create file and write data
+
   res.sendFile(__dirname + "/src/html/register.html");
 });
 
